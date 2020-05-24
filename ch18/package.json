@@ -25,7 +25,7 @@
     "cookie-parser": "^1.1.0",
     "cors": "^2.3.1",
     "csurf": "^1.8.3",
-    "express": "~4.4.2",
+    "express": "~4.17.1",
     "express-logger": "0.0.3",
     "express-session": "^1.2.1",
     "express3-handlebars": "~0.5.0",
