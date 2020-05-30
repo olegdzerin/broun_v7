@@ -5,3 +5,35 @@
 
 <p>Please feel free to <a href="/contact">contact us</a>
 with any questions or comments.</p>
+<input type="file" oninput="upload(this.files[0])">
+<div id ="res"></div>
+<script>
+function upload(file) {
+  let xhr = new XMLHttpRequest();
+
+  // отслеживаем процесс отправки
+  xhr.upload.onprogress = function(event) {
+    alert(`Отправлено ${event.loaded} из ${event.total}`);
+    alert(event);
+  };
+
+  // Ждём завершения: неважно, успешного или нет
+  xhr.onloadend = function() {
+    if (xhr.status == 200) {
+      alert("это Успех");
+      console.log(xhr.responseType);
+      console.log(xhr.response);
+      console.log(xhr.HEADERS_RECEIVED);
+      console.log(xhr.getResponseHeader("Content-type"));
+      $("#res").html(xhr.response);
+    } else {
+     alert("Ошибка " + this.status);
+    }
+  };
+
+  xhr.open("POST", "http://localhost:3000");
+  xhr.setRequestHeader("Content-type", "text/html");
+  
+  xhr.send(file);
+}
+</script>

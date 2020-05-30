@@ -1,0 +1,33 @@
+<h1>About Meadowlark Travel</h1>
+
+<p>Your fortune for the day:</p>
+<blockquote>{{fortune}}</blockquote>
+
+<p>Please feel free to <a href="/contact">contact us</a>
+with any questions or comments.</p>
+<form name="person">
+  <input name="name" value="Петя">
+  <input name="surname" value="Васечкин">
+</form>
+
+<script>
+  // заполним FormData данными из формы
+   let formData = new FormData(document.form);
+  //let formData = new FormData(document.forms.person);
+console.log(FormData);
+console.log(formData);
+console.log(document.forms.person);
+  // добавим ещё одно поле
+ // formData.append("middle", "Иванович");
+
+  // отправим данные
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "/aboutForm");
+  xhr.setRequestHeader("Content-type", "multipart/form-data");
+  xhr.send(formData);
+
+  xhr.onload = () => {
+    console.log(xhr.response);
+    console.log(xhr.responseText);
+  };
+</script>

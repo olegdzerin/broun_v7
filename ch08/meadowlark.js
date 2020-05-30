@@ -69,11 +69,34 @@ app.use(function(req, res, next){
 app.get('/', function(req, res) {
 	res.render('home');
 });
+app.post('/', function (req, res) { 
+    console.log(req.body.url)
+    console.log(req.headers["content-encoding"]) 
+  console.log(req.headers["content-type"]);
+    res.status = 200;
+   // res.setHeader("Content-type","text/html");
+  //  res.send("res_send");
+     res.render('tours/oregon-coast');
+    
+});
 app.get('/about', function(req,res){
 	res.render('about', { 
 		fortune: fortune.getFortune(),
 		pageTestScript: '/qa/tests-about.js' 
 	} );
+});
+app.get('/aboutForm', function(req,res){
+	res.render('aboutForm', { 
+		fortune: fortune.getFortune(),
+		pageTestScript: '/qa/tests-about.js' 
+	} );
+});
+app.post('/aboutForm', function (req, res) {
+    var body = req.body;
+    console.log(body);
+    console.log(req.headers);
+    res.setHeader("Content-type", "text/text");
+    res.send("Ми прийняли ваші дані");
 });
 app.get('/tours/hood-river', function(req, res){
 	res.render('tours/hood-river');
