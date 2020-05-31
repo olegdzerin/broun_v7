@@ -1,6 +1,13 @@
 <h1>Request Group Rate</h1>
-<form>
-	<input type="hidden" name="referrer">
+<form id="tours-process" action="/tours/process">
+	<input type="text" name="referrer">
+	Name: <input type="text" id="fieldName" name="name"><br>
+	Group size: <input type="text" name="groupSize"><br>
+	Email: <input type="email" name="email"><br>
+	<input type="submit" value="Submit">
+</form>
+<form id="tours-process-post" method="post" action="/tours/process">
+	<input type="text" name="referrer">
 	Name: <input type="text" id="fieldName" name="name"><br>
 	Group size: <input type="text" name="groupSize"><br>
 	Email: <input type="email" name="email"><br>
@@ -9,7 +16,9 @@
 {{#section 'jquery'}}
 	<script>
 		$(document).ready(function(){
+		//	console.log(document.referrer);
 			$('input[name="referrer"]').val(document.referrer);
+		//	setTimeout(function(){console.log(document.referrer);},5000);
 		});
 	</script>
 {{/section}}

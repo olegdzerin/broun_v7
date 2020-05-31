@@ -36,7 +36,10 @@
 					data: $(this).serialize(),
                     success: function(data){
                         if(data.success){
-                            $container.html('<h2>Thank you!</h2>');
+                            $container.html(`<h2>Thank you! You are login</h2> 
+                             <h1> Ваше імя:${data.data.name}</h1>
+                              <h1> Ваш email:${data.data.email}</h1>`
+                           );
                         } else {
                             $container.html('There was a problem.');
                         }

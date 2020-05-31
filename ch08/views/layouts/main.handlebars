@@ -14,7 +14,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+        {{!-- <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"> --}}
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
         <style>
             body {
                 padding-top: 50px;
@@ -30,7 +31,25 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="http://localhost:3000">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="//localhost:3000/about">About</a>
+      <a class="nav-item nav-link" href="http://localhost:3000/contact">Contact</a>
+      <a class="nav-item nav-link "  href="http://localhost:3000/newsletter">News Letter</a>
+       <a class="nav-item nav-link "  href="http://localhost:3000/nursery-rhyme">nursery-rhyme</a>
+        <a class="nav-item nav-link "  href="//localhost:3000/tours/hood-river">Hood-river</a>
+        <a class="nav-item nav-link "  href="//localhost:3000/tours/oregon-coast">oregon-coast</a>
+       <a class="nav-item nav-link "  href="//localhost:3000/tours/request-group-rate">request-group-rate</a>
+        <a class="nav-item nav-link "  href="http://localhost:3000/newsletter">News Letter</a>
+    </div>
+  </div>
+</nav>
 		<header><img src="/img/logo.png" alt="Meadowlark Travel Logo"></header>
 
 	    <div class="container">
@@ -61,8 +80,8 @@
 			{{/if}}
 			<script>mocha.run();</script>
 		{{/if}}
-
-        <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+        {{!-- <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
         <script src="/js/main.js"></script>
     </body>
 </html>
