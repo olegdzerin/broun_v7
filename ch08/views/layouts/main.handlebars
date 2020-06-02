@@ -13,7 +13,7 @@
 		{{{_sections.head}}}
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+ 
         {{!-- <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"> --}}
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
         <style>
@@ -28,6 +28,7 @@
         <script src="/vendor/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
+        
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -46,7 +47,11 @@
         <a class="nav-item nav-link "  href="//localhost:3000/tours/hood-river">Hood-river</a>
         <a class="nav-item nav-link "  href="//localhost:3000/tours/oregon-coast">oregon-coast</a>
        <a class="nav-item nav-link "  href="//localhost:3000/tours/request-group-rate">request-group-rate</a>
-        <a class="nav-item nav-link "  href="http://localhost:3000/newsletter">News Letter</a>
+        <a class="nav-item nav-link "  href="//localhost:3000/contest/vacation-photo">vacation-photo</a>
+        <a class="nav-item nav-link "  href="//localhost:3000/contest/jquery-up-fl-simply">jquery-up-fl-simply</a>
+        <a class="nav-item nav-link "  href="//localhost:3000/tours/oregon-coast">oregon-coast</a>
+       <a class="nav-item nav-link "  href="//localhost:3000/tours/request-group-rate">request-group-rate</a>
+        <a class="nav-item nav-link "  href="//localhost:3000/contest/vacation-photo">vacation-photo</a>
     </div>
   </div>
 </nav>
@@ -62,12 +67,13 @@
 			</footer>
 	    </div> <!-- /container -->        
 
-        <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+       
         <script>window.jQuery || document.write('<script src="/vendor/js/jquery-2.1.1.min.js"><\/script>')</script>
     	{{{_sections.jquery}}}
 
 		{{#if showTests}}
 			<div id="mocha"></div>
+            <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 			<script src="/vendor/mocha.js"></script>
 			<script src="/vendor/chai.js"></script>
 			<script>

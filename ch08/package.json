@@ -17,11 +17,13 @@
   },
   "homepage": "https://github.com/EthanRBrown/web-development-with-node-and-express",
   "dependencies": {
+    "body-parser": "*",
+    "chai": "*",
     "express": "*",
     "express-handlebars": "*",
-    "chai": "*",
-    "body-parser": "*",
-    "formidable": "*"
+    "formidable": "*",
+    "jquery": "^3.5.1",
+    "jquery-file-upload": "^4.0.11"
   },
   "devDependencies": {
     "grunt": "*",

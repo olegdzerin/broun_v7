@@ -1,9 +1,16 @@
 var express = require('express'),
+    // jQuery = require('jquery'),
+    //  jQuery = require('./public/vendor/js/jquery-3.5.1.js'),
     fortune = require('./lib/fortune.js'),
     formidable = require('formidable'),
     getWeatherData = require('./lib/getWeatherData'),
-    getAdress = require('./lib/getAdress');
+    getAdress = require('./lib/getAdress'),
+    jqupload;
+        // = require('jquery-file-upload');
 
+setTimeout(() => function () { 
+    jqupload = require('jquery-file-upload')
+},0);
 
 var app = express();
 
@@ -42,6 +49,19 @@ app.use(function (req, res, next) {
     res.locals.partials.weatherContext = getWeatherData();
     res.locals.contact = getAdress;
     next();
+});
+// jQuery File Upload endpoint middleware
+app.use('/upload', function (req, res, next) {
+    // var now = Date.now();
+    // jqupload.fileHandler({
+    //     uploadDir: function(){
+    //         return __dirname + '/public/uploads/' + now;
+    //     },
+    //     uploadUrl: function(){
+    //         return '/uploads/' + now;
+    //  },
+    console.log('uplaod');
+    //  })(req, res, next);
 });
 
 app.get('/', function (req, res) {
@@ -156,6 +176,13 @@ app.post('/contest/vacation-photo/:year/:month', function (req, res) {
         console.log('received files:');
         console.log(files);
         res.redirect(303, '/thank-you');
+    });
+});
+app.get('/contest/jquery-up-fl-simply', function (req, res) {
+    var now = new Date();
+    res.render('contest/jquery-up-fl-simply', {
+        year: now.getFullYear(),
+        month: now.getMonth()
     });
 });
 
