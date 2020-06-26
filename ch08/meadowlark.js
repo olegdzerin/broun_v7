@@ -65,7 +65,7 @@ app.use('/upload', function (req, res, next) {
 });
 
 app.get('/', function (req, res) {
-    res.render('home');
+    res.render('home', {title: 'titleHome'});
 });
 app.post('/', function (req, res) {
     console.log(req.body.url)

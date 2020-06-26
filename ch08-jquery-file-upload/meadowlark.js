@@ -68,20 +68,31 @@ app.use(function(req, res, next){
 });
 
 // jQuery File Upload endpoint middleware
-app.use('/upload', function(req, res, next){
-    var now = Date.now();
-    jqupload.fileHandler({
-        uploadDir: function(){
-            return __dirname + '/public/uploads/' + now;
-        },
-        uploadUrl: function(){
-            return '/uploads/' + now;
-        },
-    })(req, res, next);
-});
+// app.use('/upload', function(req, res, next){
+//     var now = Date.now();
+//     jqupload.fileHandler({
+//         uploadDir: function(){
+//             return __dirname + '/public/uploads/' + now;
+//         },
+//         uploadUrl: function(){
+//             return '/uploads/' + now;
+//         },
+//     })(req, res, next);
+// });
+app.use('/upload', jqupload.fileHandler({
+    uploadDir: __dirname + '/public/uploads',
+    uploadUrl: '/uploads'
+    // imageVersions: {
+    //     thumbnail: {
+    //         width: 100,
+    //         height: 100
+    //     }
+
+}));
+
 
 app.get('/', function(req, res) {
-	res.render('home');
+    res.render('home', {title:"home"});
 });
 app.get('/about', function(req,res){
 	res.render('about', { 
